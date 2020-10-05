@@ -19,8 +19,9 @@
  * 	 10-01-20	mbarone			can start inputting new code immediately after bad code response without waiting for the 5 second reset 
  * 	 10-01-20	mbarone			added Panic button integration
  * 	 10-03-20	mbarone			added SecurityKeypad capability to help integrate into HSM and other apps that use this feature
- *      10-04-20   ArnB 					In advance mode eliminate child devices: Button and InputDisplay, maintain structure if not advanced
- *												Kept iframe don't use it, and have not way to test it, but should be easy to merge into Virtual Keypad 
+ *      10-04-20   ArnB                 In advance mode eliminate child devices: Button and InputDisplay, maintain structure if not advanced
+ *                                             Kept iframe don't use it, and have not way to test it, but should be easy to merge into Virtual Keypad 
+ *      10-05-20   ArnB                 fix panic in advanced mode using Contact capability
  */
 
 import groovy.json.JsonSlurper
@@ -28,9 +29,10 @@ import groovy.json.JsonOutput
  
 metadata {
 	definition (name: "Virtual Keypad", namespace: "mbarone", author: "mbarone", importUrl: "https://raw.githubusercontent.com/michaelbarone/hubitat/master/drivers/virtualKeypad.groovy") {
-		capability "PushableButton"
+		capability "PushableButton"		//Used for push input data
 		capability "Lock Codes"
 		capability "SecurityKeypad"
+		capability "ContactSensor"			//Used with Panic
 	}
 
     preferences {
@@ -289,22 +291,36 @@ def resetInputDisplay(){
 	updateInputDisplay(state.codeInput)
 }
 
-def panicAlarm(){
+void panicAlarm(){
 	state.panicPressCount = state.panicPressCount + 1
 	if (logEnable) log.debug "panicAlarm press "+ state.panicPressCount
-	if(state.panicPressCount<2){
+	if(state.panicPressCount<2)
 		updateInputDisplay("Press Panic Again to Trigger")
-	} else {
+	else 
+	if (state.advancedButtonControl)
+		{
+		panicContactClose()		//contact must be clossed or open event does not work
+		sendEvent(name: "contact", value: "open", displayed: true, isStateChange: true)
+		updateInputDisplay("Panic Alarm Triggered")
+		state.panicPressCount = 0
+		runIn(3, "panicContactClose")
+		} 
+	else 
+		{	
 		def panicDevice = getChildDevice("${device.deviceNetworkId}-Panic")
 		panicDevice?.tamperAlert()
 		panicDevice?.on()
 		updateInputDisplay("Panic Alarm Triggered")
 		state.panicPressCount = 0
-	}
+		}
 	unschedule(clearPanicCount)
 	runIn(5,clearPanicCount)
+	}
+	
+def panicContactClose()
+{
+	sendEvent(name: "contact", value: "closed", displayed: true, isStateChange: true)
 }
-
 def clearPanicCount(){
 	if (logEnable) log.debug "clearPanicCount"
 	unschedule(clearCode)
