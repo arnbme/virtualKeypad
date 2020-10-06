@@ -1,0 +1,222 @@
+{
+  "localization": "English",
+  "roundedCorners": 10,
+  "dateFormat": "MM/DD/YYYY",
+  "hideLabels": true,
+  "customColors": [],
+  "colWidth": "",
+  "cloudRefresh": 5,
+  "hsmPin": "",
+  "hide3dot": false,
+  "clockMode": true,
+  "gridGap": 10,
+  "tiles": [
+    {
+      "rowSpan": 1,
+      "template": "buttons",
+      "col": 5,
+      "colSpan": 4,
+      "id": 0,
+      "row": 6,
+      "device": "1988",
+      "templateExtra": "0"
+    },
+    {
+      "rowSpan": 1,
+      "template": "buttons",
+      "col": 1,
+      "colSpan": 4,
+      "id": 1,
+      "row": 3,
+      "device": "1988",
+      "templateExtra": "1 "
+    },
+    {
+      "rowSpan": 1,
+      "template": "buttons",
+      "col": 5,
+      "colSpan": 4,
+      "id": 2,
+      "row": 3,
+      "device": "1988",
+      "templateExtra": "2"
+    },
+    {
+      "rowSpan": 1,
+      "template": "buttons",
+      "col": 9,
+      "colSpan": 4,
+      "id": 3,
+      "row": 3,
+      "device": "1988",
+      "templateExtra": "3"
+    },
+    {
+      "rowSpan": 1,
+      "template": "buttons",
+      "col": 1,
+      "colSpan": 4,
+      "id": 4,
+      "row": 4,
+      "device": "1988",
+      "templateExtra": "4"
+    },
+    {
+      "rowSpan": 1,
+      "template": "buttons",
+      "col": 5,
+      "colSpan": 4,
+      "id": 5,
+      "row": 4,
+      "device": "1988",
+      "templateExtra": "5"
+    },
+    {
+      "rowSpan": 1,
+      "template": "buttons",
+      "col": 9,
+      "colSpan": 4,
+      "id": 6,
+      "row": 4,
+      "device": "1988",
+      "templateExtra": "6"
+    },
+    {
+      "rowSpan": 1,
+      "template": "buttons",
+      "col": 1,
+      "colSpan": 4,
+      "id": 7,
+      "row": 5,
+      "device": "1988",
+      "templateExtra": "7"
+    },
+    {
+      "rowSpan": 1,
+      "template": "buttons",
+      "col": 5,
+      "colSpan": 4,
+      "id": 8,
+      "row": 5,
+      "device": "1988",
+      "templateExtra": "8"
+    },
+    {
+      "rowSpan": 1,
+      "template": "buttons",
+      "col": 9,
+      "colSpan": 4,
+      "id": 9,
+      "row": 5,
+      "device": "1988",
+      "templateExtra": "9"
+    },
+    {
+      "rowSpan": 1,
+      "template": "buttons",
+      "col": 1,
+      "colSpan": 3,
+      "id": 10,
+      "row": 1,
+      "device": "1988",
+      "templateExtra": "armAway"
+    },
+    {
+      "rowSpan": 1,
+      "template": "buttons",
+      "col": 4,
+      "colSpan": 3,
+      "id": 11,
+      "row": 1,
+      "device": "1988",
+      "templateExtra": "armNight"
+    },
+    {
+      "rowSpan": 1,
+      "template": "buttons",
+      "col": 7,
+      "colSpan": 3,
+      "id": 12,
+      "bgImage": "Home",
+      "row": 1,
+      "device": "1988",
+      "templateExtra": "armHome"
+    },
+    {
+      "rowSpan": 1,
+      "template": "buttons",
+      "col": 10,
+      "colSpan": 3,
+      "id": 13,
+      "bgImage": "Home",
+      "row": 1,
+      "device": "1988",
+      "templateExtra": "disarm"
+    },
+    {
+      "rowSpan": 1,
+      "template": "buttons",
+      "col": 9,
+      "colSpan": 4,
+      "id": 14,
+      "row": 6,
+      "device": "1988",
+      "templateExtra": "Panic",
+      "customIcon": null
+    },
+    {
+      "rowSpan": 1,
+      "template": "buttons",
+      "col": 1,
+      "colSpan": 4,
+      "id": 15,
+      "row": 6,
+      "device": "1988",
+      "templateExtra": "Clear",
+      "customIcon": "he-star-empty"
+    },
+    {
+      "rowSpan": 1,
+      "template": "attribute",
+      "col": 1,
+      "colSpan": 8,
+      "id": 16,
+      "row": 2,
+      "device": "1988",
+      "templateExtra": "InputDisplay"
+    },
+    {
+      "rowSpan": 1,
+      "template": "hsm",
+      "col": 9,
+      "colSpan": 4,
+      "id": 17,
+      "row": 2,
+      "device": "-3"
+    },
+    {
+      "rowSpan": 1,
+      "template": "texttile",
+      "col": 9,
+      "colSpan": 4,
+      "id": 18,
+      "row": 2
+    }
+  ],
+  "goBack": true,
+  "modePin": "",
+  "bgColor": "black",
+  "lanRefresh": 2,
+  "iconSize": "42",
+  "cols": 12,
+  "rowHeight": "",
+  "customCSS": ".header.flex {\npadding:0 !important;\n}\n\n.wrapper {\noverflow: hidden;\npadding-right: 15px;\n}\n\n.dashBack.flex, .dashName.flex {\ndisplay:none;\n}\n\n.he-tap:before {\ncontent: none;\n}\n\n.tile.button .tile-title, .tile.attribute .tile-title {\nvisibility: hidden;\ndisplay: none;\n}\n\n.tile.button .tile-contents, .tile.attribute .tile-contents {\nheight: calc(100%);\n}\n\n.tile.attribute .tile-primary, .tile.button .tile-primary {\npadding:0;\n}\n\n#tile-1 .tile-primary :before {\ncontent: \"1\";\n}\n\n#tile-2 .tile-primary :before {\ncontent: \"2\";\n}\n\n#tile-3 .tile-primary :before {\ncontent: \"3\";\n}\n\n#tile-4 .tile-primary :before {\ncontent: \"4\";\n}\n\n#tile-5 .tile-primary :before {\ncontent: \"5\";\n}\n\n#tile-6 .tile-primary :before {\ncontent: \"6\";\n}\n\n#tile-7 .tile-primary :before {\ncontent: \"7\";\n}\n\n#tile-8 .tile-primary :before {\ncontent: \"8\";\n}\n\n#tile-9 .tile-primary :before {\ncontent: \"9\";\n}\n\n#tile-0 .tile-primary :before {\ncontent: \"0\";\n}\n\n#tile-14 .tile-primary :before {\ncontent: \"Panic\"; font-size: 15pt !important;}\n#tile-13 .tile-primary :before {\ncontent: \"Disarm\"; font-size: 15pt !important;}\n#tile-12 .tile-primary :before {\ncontent: \"Home\"; font-size: 15pt !important;}\n#tile-11 .tile-primary :before {\ncontent: \"Night\";font-size: 15pt !important;}\n#tile-10 .tile-primary :before {\ncontent: \"Away\"; font-size: 15pt !important;}\n\n#tile-16 tile.attribute {border: 2px, solid, #fff !important;}\n\n#tile-17 .tile-primary {\npadding: 0;\n}\n\n#tile-17 .tile-primary .material-icons {\ndisplay:none;\n}\n#tile-17 .hsm .p-1{\nmargin: 0;\npadding: 0;\n}\n#tile-17 .tile-title{display:none}\n\n",
+  "hideEvents": false,
+  "tempScale": "F",
+  "noColors": false,
+  "readOnly": null,
+  "rows": 6,
+  "hideIconText": true,
+  "name": "Virtual Keypad",
+  "fontSize": 12
+}
